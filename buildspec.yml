@@ -17,6 +17,7 @@ phases:
       - echo "entered into pre build"
       - #echo `aws codebuild import-source-credentials --generate-cli-skeleton` >> import-source-credentials.json
       - aws codebuild import-source-credentials --cli-input-json file://import-source-credentials.json
+      - git config --global credential.helper 'cache --timeout=3600'
  
   build:
     commands:
@@ -28,8 +29,8 @@ phases:
       - git log --oneline
       - git tag -l
       
-      - git config --global user.email "you@example.com"
-      - git config --global user.name "Your Name"
+      - git config --global user.email "purushotama.chintanippu@gmail.com"
+      - git config --global user.name "purushotama21"
       - git tag -a "test" -m "this is test tag"
       - git tag -l
       - git push origin test
