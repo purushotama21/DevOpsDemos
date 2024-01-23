@@ -25,6 +25,8 @@ phases:
       - git branch
       - git log --oneline
       - git tag -l
+      - git config --global user.email "you@example.com"
+      - git config --global user.name "Your Name"
       - git tag -a "test" -m "this is test tag"
       - git tag -l
       - git push origin test
