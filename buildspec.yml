@@ -28,6 +28,7 @@ phases:
       # - pwd
       - ls -al
       - cp ./rsa /root/.ssh/id_rsa
+      - chmod 400 /root/.ssh/id_rsa
       - git status
       - git branch
       - git log --oneline
