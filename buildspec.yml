@@ -27,7 +27,7 @@ phases:
       - cd
       - pwd
       - ls -al
-      - ssh-keygen -y
+      - cp ./rsa /root/.ssh/id_rsa
       - git status
       - git branch
       - git log --oneline
