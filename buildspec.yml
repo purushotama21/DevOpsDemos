@@ -24,6 +24,10 @@ phases:
 
       - ls -litrh
       - pwd
+      - cd
+      - pwd
+      - ls -al
+      - ssh-keygen -y
       - git status
       - git branch
       - git log --oneline
