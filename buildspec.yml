@@ -31,6 +31,8 @@ phases:
       
       - git config --global user.email "purushotama.chintanippu@gmail.com"
       - git config --global user.name "purushotama21"
+      - git remote -v
+      - git remote set-url origin https://purushotama21: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@github.com/purushotama21/DevOpsDemos.git
       - git tag -a "test" -m "this is test tag"
       - git tag -l
       - git push origin test
