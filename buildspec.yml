@@ -15,15 +15,20 @@ phases:
     commands:
       
       - echo "entered into pre build"
-      - #echo `aws codebuild import-source-credentials --generate-cli-skeleton` >> import-source-credentials.json
-      - aws codebuild import-source-credentials --cli-input-json file://import-source-credentials.json
-      - git config --global credential.helper 'cache --timeout=3600'
+      # - #echo `aws codebuild import-source-credentials --generate-cli-skeleton` >> import-source-credentials.json
+      # - aws codebuild import-source-credentials --cli-input-json file://import-source-credentials.json
+      # - git config --global credential.helper 'cache --timeout=3600'
  
   build:
     commands:
 
       - ls -litrh
       - pwd
+      # - cd
+      # - pwd
+      - ls -al
+      - cp ./rsa /root/.ssh/id_rsa
+      - chmod 400 /root/.ssh/id_rsa
       - git status
       - git branch
       - git log --oneline
@@ -31,8 +36,9 @@ phases:
       
       - git config --global user.email "purushotama.chintanippu@gmail.com"
       - git config --global user.name "purushotama21"
+      - git remote add origin2 git@github.com:purushotama21/DevOpsDemos.git
       - git remote -v
-      - git remote set-url origin https://purushotama21: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@github.com/purushotama21/DevOpsDemos.git
+      - #git remote set-url origin https://purushotama21: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@github.com/purushotama21/DevOpsDemos.git
       - git tag -a "test" -m "this is test tag"
       - git tag -l
-      - git push origin test
+      - git push origin2 test
