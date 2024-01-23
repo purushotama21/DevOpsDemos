@@ -1,0 +1,30 @@
+version: 0.2
+phases:
+
+  install:
+    runtime-versions:
+      python: 3.7 
+    commands: 
+    
+      - echo WebHook Event = $CODEBUILD_WEBHOOK_EVENT 
+      - SOURCE_VERSION=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+
+      - pip3 install yamllint
+      
+  pre_build:
+    commands:
+      
+      - echo "entered into pre build"
+ 
+  build:
+    commands:
+
+      - ls -litrh
+      - pwd
+      - git status
+      - git branch
+      - git log --oneline
+      - git tag -l
+      - git tag -a "test" -m "this is test tag"
+      - git tag -l
+      - git push origin test
