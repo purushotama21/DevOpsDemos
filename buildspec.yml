@@ -15,7 +15,7 @@ phases:
     commands:
       
       - echo "entered into pre build"
-      - aws codebuild import-source-credentials --generate-cli-skeleton
+      - echo `aws codebuild import-source-credentials --generate-cli-skeleton` >> import-source-credentials.json
  
   build:
     commands:
