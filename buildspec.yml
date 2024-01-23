@@ -15,6 +15,7 @@ phases:
     commands:
       
       - echo "entered into pre build"
+      - aws codebuild import-source-credentials --generate-cli-skeleton
  
   build:
     commands:
@@ -25,6 +26,7 @@ phases:
       - git branch
       - git log --oneline
       - git tag -l
+      
       - git config --global user.email "you@example.com"
       - git config --global user.name "Your Name"
       - git tag -a "test" -m "this is test tag"
